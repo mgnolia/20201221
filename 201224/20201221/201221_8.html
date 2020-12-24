@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            /* p태그가 늘어날 때 마다 증가하는 변수 */
+            /* rint : 변수 이름(다른 거 넣어도 됌) */
+            counter-increment: rint;
+        }
+        p::before
+        {
+            content: counter(rint); "."
+        }
+        /* p태그 끝에다가 page 번호 삽입 */
+        p::after
+        {
+            content : " - "attr(data-page) "page"
+        }
+        p::first-letter
+        {
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>嗣他是人有持使，主。</h1>
+    <p data-page="52">Lorem ipsum dolor sit amet.</p>
+    <p data-page="272">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p data-page="6">이렇게 적으면 명언인 줄 알더라</p>
+</body>
+</html>
